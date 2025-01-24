@@ -14,6 +14,7 @@
             padding: 20px 10px 40px;
             margin: 20px 0px;
             border-radius: 15px;
+            overflow: hidden;
         }
 
         .card-box:hover {
@@ -53,9 +54,15 @@
             color: rgba(0, 0, 0, 0.15);
         }
 
-        .card-box .card-link {
+        .card-box a.card-link {
             text-decoration: none;
-            color: #fff;
+            color: inherit;
+            display: block;
+        }
+
+        .card-box a.card-link:hover {
+            text-decoration: none;
+            color: inherit;
         }
 
         .bg-blue {
@@ -121,7 +128,7 @@
     <!-- Content -->
     <div class="container mt-5 pt-5">
         <div class="welcome-section">
-            <h1>Selamat Datang di Karya Akhir</h1>
+            <h1>Selamat Datang di Manajemen Karya Akhir</h1>
             <p>Platform untuk mengelola dan memantau progres karya akhir Anda.</p>
         </div>
 

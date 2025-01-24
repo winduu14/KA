@@ -1,40 +1,69 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('blog-form');
-    const messageDiv = document.getElementById('message');
+    // Example of dynamically loading blog data
+    const blogData = [
+        {
+            title: 'Laporan Research KA DKV',
+            description: 'Laporan kegiatan penelitian.',
+            link: 'https://windu.art.blog/',
+            image: 'assets/images/1.png',
+            icon: 'fas fa-calendar-alt' // Icon for January
+        },
+        {
+            title: 'Windu art blog',
+            description: 'Web App untuk blog.',
+            link: 'https://windu.art.blog/february-report/',
+            image: 'assets/images/2.png',
+            icon: 'fas fa-calendar-alt' // Icon for February
+        },
+        {
+            title: 'Laporan Bulanan Maret',
+            description: 'Laporan kegiatan selama bulan Maret.',
+            link: 'https://windu.art.blog/march-report/',
+            image: 'https://via.placeholder.com/320x220',
+            icon: 'fas fa-calendar-alt' // Icon for March
+        }
+        // Add more data as needed
+    ];
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+    const cardGrid = document.querySelector('.card-grid');
 
-        const title = document.getElementById('title').value;
-        const content = document.getElementById('content').value;
+    blogData.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('card');
 
-        // Simpan blog ke Google Sheets
-        saveBlogToSheet(title, content);
+        const cardLink = document.createElement('a');
+        cardLink.href = item.link;
+        cardLink.target = '_blank';
+
+        const cardImage = document.createElement('img');
+        cardImage.src = item.image;
+        cardImage.alt = item.title;
+
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+
+        const cardTitle = document.createElement('h5');
+        cardTitle.classList.add('card-title');
+        
+        // Create icon element
+        const cardIcon = document.createElement('i');
+        cardIcon.className = item.icon;
+        
+        // Append icon and title text to card title
+        cardTitle.appendChild(cardIcon);
+        cardTitle.appendChild(document.createTextNode(item.title));
+
+        const cardText = document.createElement('p');
+        cardText.classList.add('card-text');
+        cardText.textContent = item.description;
+
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+
+        cardLink.appendChild(cardImage);
+        cardLink.appendChild(cardBody);
+
+        card.appendChild(cardLink);
+        cardGrid.appendChild(card);
     });
-
-    function saveBlogToSheet(title, content) {
-        // Ganti URL berikut dengan URL Web App dari Google Apps Script Anda
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzQzAm4-ju4A9eceQm4SAsAjwLZqqI6-u-Vbm7CgxAddph6mciaF1TQxpc6dUWAWFJe/exec';
-
-        fetch(scriptURL, {
-            method: 'POST',
-            body: JSON.stringify({ title, content }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result.status === 'success') {
-                messageDiv.innerHTML = '<div class="alert alert-success">Blog berhasil disimpan!</div>';
-                form.reset();
-            } else {
-                messageDiv.innerHTML = '<div class="alert alert-danger">Gagal menyimpan blog. Coba lagi.</div>';
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            messageDiv.innerHTML = '<div class="alert alert-danger">Terjadi kesalahan. Coba lagi.</div>';
-        });
-    }
 });
