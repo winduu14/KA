@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Sample data for total uploads
     const totalUploads = {
-        home: 5,
-        progress: 10,
-        archive: 7
+        home: ,
+        progress: 4,
+        archive: 3
     };
 
     // Update total uploads in the DOM
