@@ -1,0 +1,14 @@
+body {
+    padding-top: 56px;
+}
+
+header {
+    background: url('https://via.placeholder.com/1920x500') no-repeat center center;
+    background-size: cover;
+}
+
+header .container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+}

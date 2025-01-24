@@ -1,0 +1,36 @@
+.bg-image {
+    background: url('https://logonesia.com/wp-content/uploads/2024/05/logo_universitas-paramadina_thumb.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+
+.bg-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency here */
+    z-index: 1;
+}
+
+.bg-image .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.badge-custom {
+    background-color: #ffcc00; /* Custom badge color */
+    color: #000;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    white-space: nowrap; /* Ensure badge text doesn't wrap */
+}
+
+.card {
+    cursor: pointer; /* Make the entire card clickable */
+}

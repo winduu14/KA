@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karya Akhir - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .card-box {
+            position: relative;
+            color: #fff;
+            padding: 20px 10px 40px;
+            margin: 20px 0px;
+            border-radius: 15px;
+        }
+
+        .card-box:hover {
+            text-decoration: none;
+            color: #f1f1f1;
+        }
+
+        .card-box:hover .icon i {
+            font-size: 100px;
+            transition: 1s;
+        }
+
+        .card-box .inner {
+            padding: 5px 10px 0 10px;
+        }
+
+        .card-box h3 {
+            font-size: 27px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            white-space: nowrap;
+            padding: 0;
+            text-align: left;
+        }
+
+        .card-box p {
+            font-size: 15px;
+        }
+
+        .card-box .icon {
+            position: absolute;
+            top: auto;
+            bottom: 5px;
+            right: 5px;
+            z-index: 0;
+            font-size: 72px;
+            color: rgba(0, 0, 0, 0.15);
+        }
+
+        .card-box .card-link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .bg-blue {
+            background: linear-gradient(45deg, #4099ff, #73b4ff);
+        }
+
+        .bg-green {
+            background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+        }
+
+        .bg-orange {
+            background: linear-gradient(45deg, #FFB64D, #ffcb80);
+        }
+
+        .welcome-section {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 50px 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .welcome-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-graduation-cap"></i> Karya Akhir</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="progress.html"><i class="fas fa-tasks"></i> Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="archive.html"><i class="fas fa-archive"></i> Arsip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="laporan_blog.html"><i class="fas fa-blog"></i> Laporan Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-5 pt-5">
+        <div class="welcome-section">
+            <h1>Selamat Datang di Karya Akhir</h1>
+            <p>Platform untuk mengelola dan memantau progres karya akhir Anda.</p>
+        </div>
+
+        <!-- Minimal Statistics Cards -->
+        <div class="row">
+            <!-- Total Uploads for Home -->
+            <div class="col-lg-4 col-md-6">
+                <a href="index.html" class="card-link">
+                    <div class="card-box bg-blue">
+                        <div class="inner">
+                            <h3 id="total-uploads-home">0</h3>
+                            <p>Total Uploads (Home)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Total Uploads for Progress -->
+            <div class="col-lg-4 col-md-6">
+                <a href="progress.html" class="card-link">
+                    <div class="card-box bg-green">
+                        <div class="inner">
+                            <h3 id="total-uploads-progress">0</h3>
+                            <p>Total Uploads (Progress)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Total Uploads for Archive -->
+            <div class="col-lg-4 col-md-6">
+                <a href="archive.html" class="card-link">
+                    <div class="card-box bg-orange">
+                        <div class="inner">
+                            <h3 id="total-uploads-archive">0</h3>
+                            <p>Total Uploads (Archive)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-archive"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
